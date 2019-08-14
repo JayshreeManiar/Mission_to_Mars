@@ -185,12 +185,9 @@ def scrape_mars_hemispheres():
             partial_img_html = browser.html
             soup = BeautifulSoup( partial_img_html, 'html.parser')
             img_url = hemispheres_main_url + soup.find('img', class_='wide-image')['src']
-    
-        hemisphere_image_urls.append({"title" : title, "img_url" : img_url})
-    
-        mars_info['hemisphere_image_urls'] = hemisphere_image_urls
-
-        
+            hemisphere_image_urls.append({"title" : title, "img_url" : img_url})
+            mars_info['hemisphere_image_urls'] = hemisphere_image_urls
+   
         # Return mars_data dictionary 
 
         return mars_info
